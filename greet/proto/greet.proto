@@ -6,6 +6,7 @@ option go_package = "github.com/ddcad2030/grpc-go/greet/proto";
 
 service GreetService{
     rpc Greet(GreetRequest) returns(GreetResponse);
+    rpc GreetManyTimes(GreetRequest) returns(stream GreetResponse);
 }
 
 message GreetRequest{

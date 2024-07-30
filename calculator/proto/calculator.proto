@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+
+import "sum.proto";
+
+
+package calculator;
+
+option go_package = "github.com/ddcad2030/grpc-go/calculator/proto";
+
+
+
+service CalculatorService{
+    rpc Sum(SumRequest) returns(SumResponse);
+}
+
