@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	pb "github.com/ddcad2030/grpc-go/greet/proto"
@@ -16,7 +17,7 @@ func doGreetManyTimes(c pb.GreetServiceClient) {
 	stream, err := c.GreetManyTimes(context.Background(), req)
 
 	if err != nil {
-		log.Fatal("Error calling GreetManyTimes: %v\n", err)
+		fmt.Printf("Error calling GreetManyTimes: %v\n", err)
 	}
 
 	for {
@@ -24,8 +25,9 @@ func doGreetManyTimes(c pb.GreetServiceClient) {
 		if err != nil {
 			break
 		}
+
 		if err != nil {
-			log.Fatal("Error while stream: %v\n", err)
+			fmt.Printf("Error while stream: %v\n", err)
 		}
 		log.Printf("GreetManyTimes: %s\n", msg.Result)
 	}
