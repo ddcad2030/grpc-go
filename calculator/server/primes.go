@@ -6,8 +6,6 @@ import (
 	pb "github.com/ddcad2030/grpc-go/calculator/proto"
 )
 
-// func (s *Server) Greet(c context.Context, in *pb.GreetRequest) (*pb.GreetResponse, error) {
-
 func (s *Server) Primes(in *pb.PrimeRequest, stream pb.CalculatorService_PrimesServer) error {
 	log.Printf("primes fuction was invoked with %v\n", in)
 	number := in.Number
