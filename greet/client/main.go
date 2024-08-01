@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	pb "github.com/ddcad2030/grpc-go/greet/proto"
 	"google.golang.org/grpc"
@@ -19,6 +20,8 @@ func main() {
 	c := pb.NewGreetServiceClient(conn)
 	// doGreet(c)
 	// doGreetManyTimes(c)
-	doLongGreet(c)
+	// doLongGreet(c)
 	// DoGreetEveryone(c)
+	// doGreetWithDeadline(c, 5*time.Second)
+	doGreetWithDeadline(c, 1*time.Second) // server waiting 3second, exceecded before 3s error
 }
