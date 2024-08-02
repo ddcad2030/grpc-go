@@ -22,6 +22,6 @@ func main() {
 	// doGreetManyTimes(c)
 	// doLongGreet(c)
 	// DoGreetEveryone(c)
-	// doGreetWithDeadline(c, 5*time.Second)
-	doGreetWithDeadline(c, 1*time.Second) // server waiting 3second, exceecded before 3s error
+	doGreetWithDeadline(c, 5*time.Second)
+	// doGreetWithDeadline(c, 1 *time.Second) // server waiting 3second, exceecded before 3s error
 }
