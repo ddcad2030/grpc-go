@@ -7,7 +7,7 @@ import (
 	pb "github.com/ddcad2030/grpc-go/blog/proto"
 )
 
-func BlogCreate(c pb.BlogServiceClient) string {
+func createBlog(c pb.BlogServiceClient) string {
 	log.Println("create blog was invoked")
 	blog := &pb.Blog{
 		AuthorId: "David",
